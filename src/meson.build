@@ -4,6 +4,7 @@ sources = files(
   'user.cpp',
   'user.h',
   'course.cpp',
+  'assessment.cpp',
   'grade.cpp',
   # 'other.cpp',  # Add additional files here. Make sure previous line ends with a comma
 )
