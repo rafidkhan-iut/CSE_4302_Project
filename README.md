@@ -20,8 +20,8 @@
 
 - Aahil Zaman
   	- [ ] Course
-    -[]Grade
-    
+  	- [ ] Grade
+  	- [ ] Assessment
 
 - Sami Rahman
     - [ ] AttendanceRecord
@@ -32,7 +32,6 @@
 
 ***Pick from here***
 -------------------
-- Assessment
 - Payment
 - Invoice
 - PaymentSystem

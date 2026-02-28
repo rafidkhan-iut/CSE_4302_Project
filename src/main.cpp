@@ -1,11 +1,10 @@
-#include "user.cpp"
-#include "sami.cpp"
-int main(){
+#include "schoolsystem.cpp"
+
+auto main() -> int {
     srand((unsigned)time(nullptr));
 	User new_user("001", "Azizul", "123", "haki@iut-dhaka.edu");
-	cout << "Running main";
+	std::cout << "Running main.cpp\n";
+	
+	SchoolSystem SYSTEM;
 
-
-	Sami obj1;
-	obj1.display();
 }
