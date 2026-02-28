@@ -25,16 +25,9 @@
 
 - Sami Rahman
     - [ ] AttendanceRecord
-    - [ ] ReportCard
 
 - Najmus Sakib
 	- [ ] SchoolSystem
-
-***Pick from here***
--------------------
-- Payment
-- Invoice
-- PaymentSystem
 
 # School Management System
 ----------------------------
