@@ -1,3 +1,6 @@
+#ifndef ASSESSMENT_CPP
+#define ASSESSMENT_CPP
+
 #include<iostream>
 #include<iomanip>
 class Assessment{
@@ -142,3 +145,5 @@ void display() const {
     std::cout << std::setfill(' ');
 }
 };
+
+#endif // ASSESSMENT_CPP
