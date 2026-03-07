@@ -1,3 +1,8 @@
+#ifndef GRADE_CPP
+#define GRADE_CPP
+
+//TODO: [ ] - Move it to a .h file
+
 #include<iostream>
 #include "assessment.cpp"
 // #include "student.cpp"
@@ -21,3 +26,5 @@ public:
 	else return 'F';
 	}
 };
+
+#endif // GRADE_CPP
