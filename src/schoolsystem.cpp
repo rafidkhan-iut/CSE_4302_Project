@@ -107,11 +107,26 @@ enum Privilege_type : uint8_t {
 	ADMIN,
 };
 
-class Display {
+class SchoolSystem{ 
 private:
+	Privilege_type privilege;
 
-public:
-	void head() {
+	std::fstream file_user;
+	std::fstream file_student;
+	std::fstream file_admin;
+	std::fstream file_teacher;
+	std::fstream file_course;
+	std::fstream file_report_card;
+	std::fstream file_attendance_record;
+
+	std::vector<Student> student_list;
+	std::vector<Admin> admin_list;
+//	std::vector<Teacher> course_list;
+	std::vector<Course> course_list;
+//	std::vector<report_card> user_list;
+//	std::vector<attendance_record> user_list;
+
+	void display_head() {
 		std::cout << "--------------------------------------------\n"
 			<< "|         School Management System         |\n"
 			<< "--------------------------------------------\n"
@@ -120,12 +135,12 @@ public:
 			<< "Provide username:          \n";
 	}
 
-	void head_pass() {
+	void display_head_pass() {
 		std::cout << "Provide Password:          \n";
 
 	}
 
-	void main_menu(Privilege_type privilege) {
+	void display_main_menu(Privilege_type privilege) {
 		switch (privilege) {
 			case Privilege_type::ADMIN :
 				std::cout << "----------->     Main Menu (Admin)   <-------------\n"
@@ -145,41 +160,14 @@ public:
 
 			case Privilege_type::STUDENT :
 				std::cout << "----------->     Main Menu (Student)   <-------------\n"
-					<< "1. Course Info \n"
-					<< "2. Attendance \n"
-					<< "3. Report Card\n";
+					<< "1. Attendance \n"
+					<< "2. Report Card\n";
 				break;
 
 			default:
-				std::cout << "----------->     Main Menu (Guest)   <-------------\n"
-					<< "1. Course Info \n"
-					<< "2. Attendance \n"
-					<< "3. Report Card\n";
+				std::cout << "----------->     Main Menu (Guest)   <-------------\n";
 		}
 	}
-
-
-
-};
-
-class SchoolSystem : private Display { 
-private:
-	Privilege_type privilege;
-
-	std::fstream file_user;
-	std::fstream file_student;
-	std::fstream file_admin;
-	std::fstream file_teacher;
-	std::fstream file_course;
-	std::fstream file_report_card;
-	std::fstream file_attendance_record;
-
-	std::vector<Student> student_list;
-	std::vector<Admin> admin_list;
-//	std::vector<Teacher> course_list;
-	std::vector<Course> course_list;
-//	std::vector<report_card> user_list;
-//	std::vector<attendance_record> user_list;
 
 
 public:
@@ -240,23 +228,53 @@ public:
 	~SchoolSystem() = default;
 	
 
+
 	void run() {
-		Display output;
-		output.head();
+		display_head();
 
 		std::string email;
 		std::string password;
 
 		std::cin >> email;
 
-		output.head_pass();
+		display_head_pass();
 
 		std::cin >> password;
 
+//TODO: HANDLE LOGIN -> SET PRIVILEGE LEVEL
 //		User user(;
 
 //		user.login(email, password);
+	
+		display_main_menu(privilege);
 		
+
+
+		int decision;
+
+		switch (privilege) {
+		
+			case STUDENT:
+				std::cin >> decision;
+				switch (decision) {
+					case 1: // Check Attendance
+
+						break;
+					case 2: // Check Record
+
+						break;
+				}
+				break;
+
+			case TEACHER:
+				break;
+
+			case ADMIN:
+				break;
+
+			default:
+
+		}
 
 	}
 
